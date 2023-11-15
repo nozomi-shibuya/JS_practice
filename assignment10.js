@@ -2,28 +2,33 @@
 let apple = {        // 「apple」オブジェクト
     name: 'apple',
     color: 'red',
-    price: 200,
+    weight: 200,
     season: 'autumn'
 };
 
 let orange = {        // 「orange」オブジェクト
     name: 'orange',
     color: 'yellow',
-    price: 150,
+    weight: 150,
     season: 'winter'
 };
 
 let grape = {      // 「grape」オブジェクト
     name: 'grape',
     color: 'purple',
-    price: 300,
+    weight: 300,
     season: 'summer'
 };
 
 // 三つオブジェクトを配列に保存
 let fruits = [apple, orange, grape];
 
-// 三つのオブジェクトのプロパティpriceを出力
+// 三つのオブジェクトのプロパティweightの合計額を出力
+// function calc_weight(weight){
+    // let totalWeight =
+
 fruits.forEach(e => {
-    console.log(e.name + ':' + e.price + 'yen');
+    let weight = 
+    console.log(e.name + ':' + e.weight + 'g');
 });
+// console.log(e.weight(200));
