@@ -26,9 +26,8 @@ let fruits = [apple, orange, grape];
 // 三つのオブジェクトのプロパティweightの合計額を出力
 // function calc_weight(weight){
     // let totalWeight =
-
+    let weight = 0
 fruits.forEach(e => {
-    let weight = 
-    console.log(e.name + ':' + e.weight + 'g');
+    weight += e.weight
 });
-// console.log(e.weight(200));
+console.log(weight);
