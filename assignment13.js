@@ -82,10 +82,10 @@ function setSubMenu(idx) {
 }
 
 //　商品一覧の表示の巻子
-function viewItemList(tag) {
+function viewItemList(tags) {
     itemListElement.innerHTML = '';
     for (let i = 0; i < itemList.length; i++) {
-        if (itemList[i].tags.some(t => t === tag)) {
+        if (itemList[i].tags.some(t => t === tags)) {
             // li要素を作成
             let li = document.createElement('li');
             // テキスト情報を作成
@@ -97,20 +97,20 @@ function viewItemList(tag) {
     }
 }
 // 商品一覧に価格を追加
-// function viewItemList(prices) {
-//     itemListElement.innerHTML = '';
-//     for (let i = 0; i < itemList.length; i++) {
-//         if (itemList[i].prices(t => t === prices)) {
-//             // li要素を作成
-//             let li = document.createElement('li');
-//             // テキスト情報を作成
-//             let text = document.createTextNode(itemList[i].id + ':' + itemList[i].name);
-//             // ul要素に追加
-//             li.appendChild(text);
-//             itemListElement.appendChild(li);
-//         }
-//     }
-// }
+function viewItemList(prices) {
+    itemListElement.innerHTML = '';
+    for (let i = 0; i < itemList.length; i++) {
+        if (itemList[i].prices.some(t => t === prices)) {
+            // li要素を作成
+            let li = document.createElement('li');
+            // テキスト情報を作成
+            let text = document.createTextNode(itemList[i].id + ':' + itemList[i].name);
+            // ul要素に追加
+            li.appendChild(text);
+            itemListElement.appendChild(li);
+        }
+    }
+}
 
 //--- イベントリスナーの定義 ---
 // 大分類の選択された時のイベントリスナー
@@ -130,21 +130,7 @@ cate2Element.addEventListener('change', function () {
     viewItemList(val);
 
 });
-// 商品一覧に価格を追加
-function viewItemList(prices) {
-    itemListElement.innerHTML = '';
-    for (let i = 0; i < itemList.length; i++) {
-        if (itemList[i].prices(t => t === prices)) {
-            // li要素を作成
-            let li = document.createElement('li');
-            // テキスト情報を作成
-            let text = document.createTextNode(itemList[i].id + ':' + itemList[i].name);
-            // ul要素に追加
-            li.appendChild(text);
-            itemListElement.appendChild(li);
-        }
-    }
-}
+
 //--- プログラムの実行 ---
 // 大分類の生成
 setMainMenu();
